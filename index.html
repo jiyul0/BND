@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>나의 자기소개서</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif; 
+            text-align: center;
+            background-color: #f5f5dc;
+            transition: opacity 1s ease-in-out; 
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 50px 20px; 
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 30px; 
+            cursor: pointer; /* 클릭 가능하도록 커서 스타일 변경 */
+        }
+
+        p {
+            color: #666;
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 20px; 
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 onclick="showInfo('basic')">안녕하세요, 저는 송지율입니다.</h1>
+        <div id="basic-info" style="display: none;">
+            <p><strong>직업:</strong> 고등학생</p>
+            <p><strong>생년월일:</strong> 2008년 05월 15일</p>
+            <p><strong>관심 분야:</strong> 미디어, 인권, 기후 위기</p>
+            <p><strong>장점:</strong> 소통능력과 책임감</p>
+            <p><strong>메일 주소:</strong> jiyul052328@naver.com</p>
+            <p><button onclick="showInfo('career')">희망 진로</button></p>
+        </div>
+        <div id="career-info" style="display: none;">
+            <p><strong>희망 진로:</strong> 다큐멘터리 PD / 라디오 PD</p>
+        </div>
+    </div>
+
+    <script>
+        // 초기에 보여지는 탭을 설정
+        var currentTab = "name";
+
+        // 탭 전환 함수
+        function showInfo(tab) {
+            var basicInfo = document.getElementById('basic-info');
+            var careerInfo = document.getElementById('career-info');
+
+            if (tab === 'basic') {
+                basicInfo.style.display = 'block'; // 기본 정보를 보여줌
+                careerInfo.style.display = 'none'; // 희망 진로 정보를 숨김
+                currentTab = "basic"; // 현재 탭을 기본 정보로 설정
+            } else if (tab === 'career') {
+                basicInfo.style.display = 'none'; // 기본 정보를 숨김
+                careerInfo.style.display = 'block'; // 희망 진로 정보를 보여줌
+                currentTab = "career"; // 현재 탭을 희망 진로로 설정
+            }
+        }
+    </script>
+</body>
+</html>
